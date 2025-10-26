@@ -108,8 +108,16 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(value) {
+  let newValue = value;
+  while (
+    newValue.charAt(0) === ' ' ||
+    newValue.charAt(0) === '\t' ||
+    newValue.charAt(0) === '\n'
+  ) {
+    newValue = newValue.trimStart();
+  }
+  return newValue;
 }
 
 /**
