@@ -83,10 +83,20 @@ function getFirstChar(value) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  let newValue = value;
+  while (
+    newValue.charAt(0) === ' ' ||
+    newValue.charAt(newValue.length - 1) === ' ' ||
+    newValue.charAt(0) === '\t' ||
+    newValue.charAt(newValue.length - 1) === '\t' ||
+    newValue.charAt(0) === '\n' ||
+    newValue.charAt(newValue.length - 1) === '\n'
+  ) {
+    newValue = newValue.trim();
+  }
+  return newValue;
 }
-
 /**
  * Removes only leading whitespace characters from the string.
  *
