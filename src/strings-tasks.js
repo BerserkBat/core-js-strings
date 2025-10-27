@@ -267,7 +267,9 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  return minutes + seconds;
+  const formatMinuters = String(minutes).padStart(2, '0');
+  const formatSeconds = String(seconds).padStart(2, '0');
+  return formatMinuters.concat(':', formatSeconds);
 }
 
 /**
